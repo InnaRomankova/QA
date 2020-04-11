@@ -1,4 +1,4 @@
-package day4.worker;
+ package day4.worker;
 
 import day4.entity.Result;
 import day4.entity.Test;
@@ -24,5 +24,4 @@ public abstract class Engineer {
     public Result executeTest(Test test) {
         return null;
     }
-
 }
