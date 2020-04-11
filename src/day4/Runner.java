@@ -10,7 +10,6 @@ import day4.worker.TestEngineer;
 
 public class Runner {
     public static void main(String[] args) {
-
         Engineer testEngineer = new TestEngineer ();
         Engineer automationEngineer = new AutomationEngineer ();
         Test manualTest = new ManualTest (TestLevel.GUI, 4);

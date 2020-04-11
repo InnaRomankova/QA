@@ -9,4 +9,5 @@ public enum TestLevel {
     TestLevel(int COMPLEXITY) {
         this.COMPLEXITY = COMPLEXITY;
     }
+
 }
