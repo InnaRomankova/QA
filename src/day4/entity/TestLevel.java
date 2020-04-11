@@ -1,4 +1,4 @@
-package day4.entity;
+ package day4.entity;
 
 public enum TestLevel {
     UNIT (1),
@@ -9,5 +9,4 @@ public enum TestLevel {
     TestLevel(int COMPLEXITY) {
         this.COMPLEXITY = COMPLEXITY;
     }
-
 }

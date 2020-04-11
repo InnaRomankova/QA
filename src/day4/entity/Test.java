@@ -1,4 +1,4 @@
-package day4.entity;
+ package day4.entity;
 
 import day4.worker.AutomationEngineer;
 import day4.worker.Engineer;
@@ -43,4 +43,5 @@ public abstract class Test implements Function<Engineer, Result> {
             return Result.PASSED;
         }
     }
+
 }

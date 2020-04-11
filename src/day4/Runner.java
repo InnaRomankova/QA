@@ -1,4 +1,4 @@
-package day4;
+ package day4;
 
 import day4.entity.AutomatedTest;
 import day4.entity.ManualTest;
@@ -17,4 +17,4 @@ public class Runner {
         System.out.println ("Result execute test1: " + manualTest.apply (automationEngineer));
         System.out.println ("Result execute test2: " + automatedTest.apply (testEngineer));
     }
-}
+ }

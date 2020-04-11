@@ -1,9 +1,9 @@
-package day4.entity;
+ package day4.entity;
 
 public class AutomatedTest extends Test {
-
     public AutomatedTest(TestLevel testLevel, int instability) {
         super (testLevel);
         this.instability = instability;
     }
+
 }
