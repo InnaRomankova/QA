@@ -36,6 +36,7 @@ public abstract class Test implements Function<Engineer, Result> {
         } else {
             anxiety = 1;
         }
+
         if (complexity * instability * anxiety > 30) {
             return Result.FAILED;
         } else {
