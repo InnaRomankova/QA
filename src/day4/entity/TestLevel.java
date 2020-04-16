@@ -1,4 +1,4 @@
- package day4.entity;
+package day4.entity;
 
 public enum TestLevel {
     UNIT (1),
