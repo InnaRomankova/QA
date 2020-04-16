@@ -1,9 +1,7 @@
- package day4.entity;
+package day4.entity;
 
 public class ManualTest extends Test {
-    public ManualTest(TestLevel testLevel, int instability) {
-        super (testLevel);
-        this.instability = instability;
+    public ManualTest(TestLevel level, int instability) {
+        super (level, instability);
     }
-
 }

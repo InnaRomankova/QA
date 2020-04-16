@@ -1,16 +1,22 @@
- package day4.worker;
+package day4.worker;
 
 import day4.entity.Result;
 import day4.entity.Test;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 
 public abstract class Engineer {
-    private int skill;
-    private int maxSkill = 10;
+
+    private int skill = ThreadLocalRandom.current ().nextInt (1, 11);
     private int anxiety = 3;
 
-    public void setSkill() {
-        this.skill = (int) (Math.random () * maxSkill + 1);
+    public void setSkill(int skill) {
+        this.skill = skill;
+    }
+
+    public void setAnxiety(int anxiety) {
+        this.anxiety = anxiety;
     }
 
     public int getSkill() {
@@ -22,6 +28,6 @@ public abstract class Engineer {
     }
 
     public Result executeTest(Test test) {
-        return null;
+        return test.apply (this);
     }
 }

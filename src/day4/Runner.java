@@ -1,4 +1,4 @@
- package day4;
+package day4;
 
 import day4.entity.AutomatedTest;
 import day4.entity.ManualTest;
@@ -12,9 +12,12 @@ public class Runner {
     public static void main(String[] args) {
         Engineer testEngineer = new TestEngineer ();
         Engineer automationEngineer = new AutomationEngineer ();
-        Test manualTest = new ManualTest (TestLevel.GUI, 4);
+        Test manualTest = new ManualTest (TestLevel.GUI, 15);
         Test automatedTest = new AutomatedTest (TestLevel.API, 1);
-        System.out.println ("Result execute test1: " + manualTest.apply (automationEngineer));
-        System.out.println ("Result execute test2: " + automatedTest.apply (testEngineer));
+
+        System.out.println (automationEngineer.executeTest (manualTest));
+        System.out.println (testEngineer.executeTest (automatedTest));
+        System.out.println (automationEngineer.executeTest (automatedTest));
+        System.out.println (testEngineer.executeTest (manualTest));
     }
- }
+}
