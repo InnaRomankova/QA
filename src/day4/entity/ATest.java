@@ -6,11 +6,11 @@ import day4.worker.TestEngineer;
 
 import java.util.function.Function;
 
-public abstract class Test implements Function<Engineer, Result> {
+public abstract class ATest implements Function<Engineer, Result> {
     protected int complexity;
     protected int instability;
 
-    public Test(TestLevel level, int instability) {
+    public ATest(TestLevel level, int instability) {
         this.complexity = level.COMPLEXITY;
         if (instability <= 0) {
             this.instability = 1;
@@ -33,8 +33,8 @@ public abstract class Test implements Function<Engineer, Result> {
     public Result apply(Engineer engineer) {
         int anxiety;
 
-        if ((this instanceof ManualTest && engineer instanceof AutomationEngineer) ||
-                (this instanceof AutomatedTest && engineer instanceof TestEngineer)) {
+        if ((this instanceof ManualATest && engineer instanceof AutomationEngineer) ||
+                (this instanceof AutomatedATest && engineer instanceof TestEngineer)) {
             anxiety = engineer.getAnxiety ();
         } else {
             anxiety = 1;

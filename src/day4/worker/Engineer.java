@@ -1,7 +1,7 @@
 package day4.worker;
 
 import day4.entity.Result;
-import day4.entity.Test;
+import day4.entity.ATest;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -27,7 +27,7 @@ public abstract class Engineer {
         return anxiety;
     }
 
-    public Result executeTest(Test test) {
-        return test.apply (this);
+    public Result executeTest(ATest ATest) {
+        return ATest.apply (this);
     }
 }
