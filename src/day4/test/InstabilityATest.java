@@ -2,34 +2,38 @@ package day4.test;
 
 import day4.entity.ATest;
 import day4.entity.AutomatedATest;
+import day4.entity.ManualATest;
 import day4.entity.TestLevel;
-import day4.worker.AutomationEngineer;
-import day4.worker.Engineer;
-import day4.worker.TestEngineer;
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+@RunWith(Parameterized.class)
 public class InstabilityATest {
-    private Engineer testEngineer = new TestEngineer ();
-    private Engineer automationEngineer = new AutomationEngineer ();
+    private ATest test;
+    private int expected;
 
-    ATest ATest;
+    public InstabilityATest(ATest test, int expected) {
+        this.test = test;
+        this.expected = expected;
+    }
 
-    @Test
-    public void verifySetInstabilityOneByGettingLessThanOne(){
-        ATest = new AutomatedATest (TestLevel.API,-3);
-        Assert.assertEquals ("Instability was set not correct!",1, ATest.getInstability ());
+    @Parameterized.Parameters
+    public static Collection<Object[]> primeNumbers() {
+        return Arrays.asList (new Object[][]{
+                {new ManualATest (TestLevel.UNIT, 0), 1},
+                {new ManualATest (TestLevel.API, 1), 1},
+                {new AutomatedATest (TestLevel.API, 10), 10},
+                {new AutomatedATest (TestLevel.GUI, 11), 10},
+        });
     }
 
     @Test
-    public void verifySetInstabilityTenByGettingGreaterThanTen(){
-        ATest = new AutomatedATest (TestLevel.API,12);
-        Assert.assertEquals ("Instability was set not correct!",10, ATest.getInstability ());
-    }
-
-    @Test
-    public void verifySetInstabilityBetweenOneAndTen(){
-        ATest = new AutomatedATest (TestLevel.API,5);
-        Assert.assertEquals ("Instability was set not correct!",5, ATest.getInstability ());
+    public void verifyInstability() {
+        Assert.assertEquals ("Test instability is not correct!", expected, test.getInstability ());
     }
 }
