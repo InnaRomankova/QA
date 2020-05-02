@@ -1,2 +1,10 @@
-# Project exclude paths
-/out/
+/.idea/
+.idea
+.out*
+*.iml
+/dist
+/temp
+/out
+target/
+**/db.properties
+/day8/src/main/java/DbConnect.java

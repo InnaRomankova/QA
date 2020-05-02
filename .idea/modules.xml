@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/QA.iml" filepath="$PROJECT_DIR$/QA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day10/day10.iml" filepath="$PROJECT_DIR$/day10/day10.iml" />
       <module fileurl="file://$PROJECT_DIR$/day6/day6.iml" filepath="$PROJECT_DIR$/day6/day6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/day8/day8.iml" filepath="$PROJECT_DIR$/day8/day8.iml" />
     </modules>
   </component>
 </project>
