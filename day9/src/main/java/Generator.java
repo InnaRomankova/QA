@@ -1,11 +1,19 @@
-import org.apache.commons.lang3.RandomStringUtils;
+import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Generator {
-    public static String generateLogin(int loginInclusiveMinimum, int loginExclusiveMaximum) {
-        return RandomStringUtils.randomAlphabetic(loginInclusiveMinimum, loginExclusiveMaximum);
+    private static int leftLimit = 48;
+    private static int rightLimit = 122;
+
+    public String loginGenerator() {
+        return new Random ().ints(leftLimit, rightLimit).filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                .limit(5).mapToObj(i -> String.valueOf((char) i))
+                .collect(Collectors.joining());
     }
 
-    public static String generatePassword(int passwordInclusiveMinimum, int passwordExclusiveMaximum) {
-        return RandomStringUtils.randomAlphabetic(passwordInclusiveMinimum, passwordExclusiveMaximum);
+    public String pwdGenerator() {
+        return new Random().ints(leftLimit, rightLimit).filter(i -> (i <= 57 || i >= 65) && (i <= 90 || i >= 97))
+                .limit(40).mapToObj(i -> String.valueOf((char) i))
+                .collect(Collectors.joining());
     }
 }

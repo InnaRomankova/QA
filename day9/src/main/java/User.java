@@ -1,4 +1,4 @@
-import org.apache.commons.codec.digest.DigestUtils;
+
 
 public class User {
     private int id;
@@ -6,9 +6,9 @@ public class User {
     private String password;
 
     public User(int id, String login, String password) {
-        this.setId(id);
-        this.setLogin(login);
-        this.setPassword(password);
+        this.setId (id);
+        this.setLogin (login);
+        this.setPassword (password);
     }
 
     public int getId() {
@@ -31,16 +31,12 @@ public class User {
         return password;
     }
 
-    public String getSha1Password() {
-        return DigestUtils.sha1Hex(password);
-    }
-
     public void setPassword(String password) {
         this.password = password;
     }
 
     @Override
     public String toString() {
-        return "User #" + getId() + ": login - " + getLogin() + ", Sha1 password - " + getSha1Password() + ", normal password - " + getPassword();
+        return "User_ID = " + getId () + "; user_login = " + getLogin () + "; user_password = " + getPassword () + ". ";
     }
 }
